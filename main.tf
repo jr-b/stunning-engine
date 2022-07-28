@@ -12,7 +12,7 @@ terraform {
 # Configure the AWS Provider
 # Define the region
 provider "aws" {
-    region = "us-east-2"
+    region = "us-east-1"
 }
 
 # Using this documentation: https://blog.gruntwork.io/a-crash-course-on-terraform-5add0d9ef9b4
@@ -32,21 +32,21 @@ resource "aws_security_group" "instance" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["ENTER-IP"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["ENTER-IP"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
     ingress {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
-    cidr_blocks = ["ENTER-IP"]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
     ingress {
@@ -69,9 +69,9 @@ resource "aws_security_group" "instance" {
 # Create the EC2 for Jenkins
 resource "aws_instance" "jenkins" {
 
-    ami = "ami-02f3416038bdb17fb"
+    ami = "ami-0022f774911c1d690"
     instance_type = "t2.micro"
-    key_name = "ohio-ec2-kpair"
+    key_name = "us-east1-kpair"
 
     vpc_security_group_ids = [aws_security_group.instance.id]
     
@@ -84,9 +84,9 @@ resource "aws_instance" "jenkins" {
 #Create the EC2 for Docker web server
 resource "aws_instance" "docker-web-server" {
 
-    ami = "ami-02f3416038bdb17fb"
+    ami = "ami-0022f774911c1d690"
     instance_type = "t2.micro"
-    key_name = "ohio-ec2-kpair"
+    key_name = "us-east1-kpair"
     
     vpc_security_group_ids = [aws_security_group.instance.id]
 

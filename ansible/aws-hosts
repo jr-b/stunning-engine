@@ -1,6 +1,6 @@
 [webservers]
-ubuntu@3.133.96.63 ansible_ssh_private_key_file=~/.ssh/ohio-ec2-kpair.pem
+ec2-user@ec2-54-89-69-22.compute-1.amazonaws.com ansible_ssh_private_key_file=~/.ssh/us-east1-kpair.pem
 
 
 [jenkins]
-ubuntu@18.218.68.106 ansible_ssh_private_key_file=~/.ssh/ohio-ec2-kpair.pem
+ec2-user@ec2-23-20-139-33.compute-1.amazonaws.com ansible_ssh_private_key_file=~/.ssh/us-east1-kpair.pem
