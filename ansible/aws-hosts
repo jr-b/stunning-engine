@@ -1,0 +1,6 @@
+[webservers]
+ubuntu@3.133.96.63 ansible_ssh_private_key_file=~/.ssh/ohio-ec2-kpair.pem
+
+
+[jenkins]
+ubuntu@18.218.68.106 ansible_ssh_private_key_file=~/.ssh/ohio-ec2-kpair.pem
