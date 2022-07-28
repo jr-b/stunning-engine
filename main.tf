@@ -32,21 +32,21 @@ resource "aws_security_group" "instance" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["96.21.196.64/32"]
+    cidr_blocks = ["ENTER-IP"]
   }
 
   ingress {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["96.21.196.64/32"]
+    cidr_blocks = ["ENTER-IP"]
   }
 
     ingress {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
-    cidr_blocks = ["96.21.196.64/32"]
+    cidr_blocks = ["ENTER-IP"]
   }
 
     ingress {
